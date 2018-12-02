@@ -1,0 +1,160 @@
+/*
+
+font-family: 'Acme', sans-serif;
+font-family: 'Montserrat', sans-serif;
+
+*/
+body {
+/*    background-color: #415361;*/
+}
+/*======================= HEADER =======================*/
+.main-header {
+    width: 100%;
+    height: 450px;
+    background-color: #333
+}
+/*======================= /HEADER =======================*/
+
+/*======================= MENU =======================*/
+.wrap-menu {
+    width: 100%;
+    height: 60px;
+    background-color: #FF1654;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.main-menu {
+    height: 60px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+.main-menu li a {
+    color: #FFF;
+    padding: 0 10px;
+    text-decoration: none;
+    font-family: 'Acme', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    background-image: url('../imgs/paw.png');
+    background-repeat: no-repeat;
+    background-position:  left 0 bottom -25px;
+    background-size: contain;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+.main-menu li a:hover {
+    color: #F3FFBD;
+    background-position: left 0 bottom 0;
+}
+/*======================= /MENU =======================*/
+
+/*======================= CONTEUDO =======================*/
+section {
+    width: 100%;
+    height: auto;
+    padding: 40px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f1f1f1
+}
+section:last-of-type {
+    padding-bottom: 50px
+}
+.content {
+    width: 100%;
+    max-width: 740px;
+    padding: 0 15px;
+}
+.content p {
+    line-height: 1.4em
+}
+.main-title {
+    font-size: 50px;
+}
+/* dados dos bancos */
+.bank-donation {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.list-banks {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+.list-banks li {
+    width: 33.33333%;
+    height: auto;
+    padding: 10px;
+    background: #fff;
+    margin-right: 10px;
+    border-top: 3px solid;
+}
+.list-banks li:last-of-type {margin-right: 0}
+.list-banks li > span {
+    display: block;
+    margin-top: 5px;
+    font-size: 16px
+}
+.list-banks li.caixaeconomica {border-color: #286CA2}
+.list-banks li.itau {border-color: #ff9641}
+.list-banks li.bancodobrasil {border-color: #F8D117}
+
+.list-banks li > span:first-of-type {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 10px
+}
+.list-banks li.caixaeconomica > span:first-of-type {color: #286CA2}
+.list-banks li.itau > span:first-of-type {color: #ff9641}
+.list-banks li.bancodobrasil > span:first-of-type {color: #F8D117}
+.list-block {
+    list-style: none;
+    padding: 0
+}
+.list-block li {
+    background-image: url('../imgs/paw.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 13px;
+    padding: 5px 0 5px 24px;
+    font-size: 22px
+}
+/*======================= /CONTEUDO =======================*/
+/*======================= FOOTER =======================*/
+.main-footer {
+    padding: 30px 15px;
+    background-color: #333
+}
+/*======================= /FOOTER =======================*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
