@@ -4,14 +4,19 @@ font-family: 'Acme', sans-serif;
 font-family: 'Montserrat', sans-serif;
 
 */
-body {
-/*    background-color: #415361;*/
+:root {
+    --caixa:#286CA2;
+    --itau:#ff9641;
+    --bbrasil:#F8D117;
 }
 /*======================= HEADER =======================*/
 .main-header {
     width: 100%;
-    height: 450px;
-    background-color: #333
+    height: 33.088235294117645vw; /*450px*/
+    background-image: url('../imgs/header.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: #333;
 }
 /*======================= /HEADER =======================*/
 
@@ -19,16 +24,23 @@ body {
 .wrap-menu {
     width: 100%;
     height: 60px;
-    background-color: #FF1654;
+    background-color: #ED1B24;
     position: fixed;
     top: 0;
     left: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 999
 }
 .main-menu {
+    width: 100%;
+    max-width: 740px;
     height: 60px;
     padding: 0;
     margin: 0;
     list-style: none;
+    position: relative;
+    z-index: 999;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -55,6 +67,91 @@ body {
     color: #F3FFBD;
     background-position: left 0 bottom 0;
 }
+.main-menu:before {
+    content: '';
+    position: absolute;
+    left: -50px;
+    top: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-image: url('../imgs/logo-pata-amiga-mini.jpg');
+    background-size: cover;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+.main-menu.stick:before {
+    width: 60px;
+    height: 60px;
+    top: 0;
+}
+.hamburguer {
+    width: 25px;
+    height: 20px;
+    display: none;
+    position: absolute;
+    background: none;
+    margin: 0 0 10px 0;
+    right: 15px;
+    top: auto
+}
+.hamburguer:after,
+.hamburguer:before,
+.hamburguer span,
+.hamburguer label {
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: #fff;
+    left: 0;
+    position: absolute;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+.hamburguer:before {
+    top: 0;
+}
+.hamburguer:after {
+    bottom: 0;
+}
+.hamburguer:focus {
+    outline: none;
+}
+.hamburguer label {
+    width: 100%;
+    height: 20px;
+    background: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+.hamburguer span {
+    top: 8px;
+}
+#change-hamburguer {
+    display: none;
+}
+#change-hamburguer:checked ~ .hamburguer:before,
+#change-hamburguer:checked ~ .hamburguer:after {
+    top: 10px;
+    margin-top: -10%;
+}
+#change-hamburguer:checked ~ .hamburguer:before {
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+#change-hamburguer:checked ~ .hamburguer:after {
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+#change-hamburguer:checked ~ .hamburguer span {
+    opacity: 0;
+}
 /*======================= /MENU =======================*/
 
 /*======================= CONTEUDO =======================*/
@@ -74,6 +171,7 @@ section:last-of-type {
     width: 100%;
     max-width: 740px;
     padding: 0 15px;
+    box-sizing: border-box
 }
 .content p {
     line-height: 1.4em
@@ -82,6 +180,29 @@ section:last-of-type {
     font-size: 50px;
 }
 /* dados dos bancos */
+.wrap-btns {
+    width: 80%;
+    margin: 0 auto;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.btn-banks-mobile.caixa {background-color: var(--caixa)}
+.btn-banks-mobile.itau {background-color: var(--itau)}
+.btn-banks-mobile.bb {background-color: var(--bbrasil)}
+.btn-banks-mobile {
+    display: none;
+    width: 33.333333%;
+    border: 0;
+    padding: 5px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 900;
+    outline: none
+}
+.btn-banks-mobile:first-of-type {border-radius: 10px 0 0 0}
+.btn-banks-mobile:last-of-type {border-radius: 0 10px 0 0}
 .bank-donation {
     width: 100%;
     display: flex;
@@ -103,6 +224,7 @@ section:last-of-type {
     background: #fff;
     margin-right: 10px;
     border-top: 3px solid;
+    box-sizing: border-box
 }
 .list-banks li:last-of-type {margin-right: 0}
 .list-banks li > span {
@@ -110,18 +232,18 @@ section:last-of-type {
     margin-top: 5px;
     font-size: 16px
 }
-.list-banks li.caixaeconomica {border-color: #286CA2}
-.list-banks li.itau {border-color: #ff9641}
-.list-banks li.bancodobrasil {border-color: #F8D117}
+.list-banks li.caixaeconomica {border-color: var(--caixa)}
+.list-banks li.itau {border-color: var(--itau)}
+.list-banks li.bancodobrasil {border-color: var(--bbrasil)}
 
 .list-banks li > span:first-of-type {
     font-weight: 600;
     font-size: 20px;
     margin-bottom: 10px
 }
-.list-banks li.caixaeconomica > span:first-of-type {color: #286CA2}
-.list-banks li.itau > span:first-of-type {color: #ff9641}
-.list-banks li.bancodobrasil > span:first-of-type {color: #F8D117}
+.list-banks li.caixaeconomica > span:first-of-type {color: var(--caixa)}
+.list-banks li.itau > span:first-of-type {color: var(--itau)}
+.list-banks li.bancodobrasil > span:first-of-type {color: var(--bbrasil)}
 .list-block {
     list-style: none;
     padding: 0
@@ -134,13 +256,120 @@ section:last-of-type {
     padding: 5px 0 5px 24px;
     font-size: 22px
 }
+.galery-adoption {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap
+}
+.galery-adoption a {
+    display: inline-block;
+    width: 128px;
+    height: auto;
+    margin: 10px;
+    overflow: hidden;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+    background: #fff;
+}
+.galery-adoption a img {
+    width: 100%;
+    height: auto;
+}
+.galery-adoption a:hover {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
 /*======================= /CONTEUDO =======================*/
 /*======================= FOOTER =======================*/
 .main-footer {
-    padding: 30px 15px;
-    background-color: #333
+    padding: 0 15px;
+    width: 100%;
+    height: 130px;
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    box-sizing: border-box
+}
+h6.text-copy {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    margin: 0
 }
 /*======================= /FOOTER =======================*/
+/*======================= MEDIA QUERIES =======================*/
+@media screen and (max-width:1024px) {
+    .main-menu:before {left: 0}
+    .main-header {height: 350px}
+}
+@media screen and (max-width: 990px) {
+    .hamburguer {display: block}
+    .wrap-menu {
+        align-items: center;
+        background-image: url('../imgs/logo-pata-amiga-mini.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 15px left center
+    }
+    .main-menu {
+        display: none;
+        background: #ed1b24;
+        background: -moz-linear-gradient(top, #ed1b24 1%, #bc1619 49%, #931313 100%);
+        background: -webkit-linear-gradient(top, #ed1b24 1%,#bc1619 49%,#931313 100%);
+        background: linear-gradient(to bottom, #ed1b24 1%,#bc1619 49%,#931313 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed1b24', endColorstr='#931313',GradientType=0 );
+        flex-direction: column;
+        max-width: 200px;
+        height: auto;
+        padding: 10px 0;
+        position: absolute;
+        right: 0;
+        top: 60px
+    }
+    .main-menu li {margin-bottom: 5px}
+    .main-menu:before {display: none}
+}
+@media screen and (max-width: 740px) {
+    .list-banks li {
+        margin-right: 0
+    }
+    .main-header {height: 47.2972972972973vw}
+    .main-footer {
+        justify-content: center;
+        flex-direction: column
+    }
+    h6.text-copy {text-align: center}
+    h6.text-copy:nth-last-of-type(1) {margin-top: 10px}
+}
+@media screen and (max-width: 630px) {
+    .bank-donation {flex-direction: column}
+    .list-banks li {
+        display: none;
+        width: 80%
+    }
+    .wrap-btns {display: flex}
+    .list-banks li:first-of-type {display: block}
+    .btn-banks-mobile {display: inline-block}
+}
+@media screen and (max-width: 500px) {
+    .main-title {font-size: 10vw}
+    .list-block li {font-size: 18px}
+    .main-header {height: 300px}
+}
+@media screen and (max-width: 375px) {
+    .list-block li strong {display: block}
+}
+/*======================= /MEDIA QUERIES =======================*/
 
 
 

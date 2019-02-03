@@ -12,10 +12,16 @@
         <link href="https://fonts.googleapis.com/css?family=Acme|Montserrat:300,400" rel="stylesheet">
         <link rel="stylesheet" href="css/animations-ie-fix.css">
         <link rel="stylesheet" href="css/animations.css">
+        <link rel="stylesheet" href="css/jquery.fancybox.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body id="home">
         <nav class="wrap-menu">
+            <input type="checkbox" id="change-hamburguer" />
+            <div class="hamburguer">
+                <span></span>
+                <label for="change-hamburguer"></label>
+            </div>
             <ul class="main-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#quemsomos">Quem somos</a></li>
@@ -40,7 +46,7 @@
         </section>
         <section id="comoajudar">
             <article class="content">
-                <h2 class="main-title">Como ajudar</h2>
+                <h2 class="main-title">Como Ajudar</h2>
                 <p>
                     <strong>Nossos pontos para recebimento de doações em Paraipaba</strong><br>
                     <strong>Padaria Garzu</strong> - Av. Maria Moreira, ao lado do posto Tetra<br>
@@ -50,6 +56,11 @@
                     <strong>Dados bancários:</strong>
                 </p>
                 <div class="bank-donation">
+                    <div class="wrap-btns">
+                        <button data-bank="bancodobrasil" class="btn-banks-mobile bb">Brasil</button>
+                        <button data-bank="itau" class="btn-banks-mobile itau">Itaú</button>
+                        <button data-bank="caixaeconomica" class="btn-banks-mobile caixa">Caixa</button>
+                    </div>
                     <ul class="list-banks">
                         <li class="bancodobrasil">
                             <span>Banco do Brasil</span>
@@ -95,7 +106,44 @@
                 </p>   
             </article>
         </section>
+        <section id="adocao">
+            <article class="content">
+                <h2 class="main-title">Adoção</h2>
+                <p>
+                    Para adotar basta entrar em contato com a gente pelas redes sociais e preencher um formulário de adoção com seus dados pessoais.
+                </p>
+                <div class="galery-adoption">
+                    <a href="imgs/adocao/lola.jpg" data-fancybox="gallery" class="item-adoption" title="Clique para ver">
+                        <img src="imgs/adocao/lola.jpg" alt="Foto">
+                    </a>
+                    <a href="imgs/adocao/negao.jpg" data-fancybox="gallery" class="item-adoption" title="Clique para ver">
+                        <img src="imgs/adocao/negao.jpg" alt="Foto">
+                    </a>
+                    <a href="imgs/adocao/penelope.jpg" data-fancybox="gallery" class="item-adoption" title="Clique para ver">
+                        <img src="imgs/adocao/penelope.jpg" alt="Foto">
+                    </a>
+                    <a href="imgs/adocao/pretinha.jpg" data-fancybox="gallery" class="item-adoption" title="Clique para ver">
+                        <img src="imgs/adocao/pretinha.jpg" alt="Foto">
+                    </a>
+                </div>
+            </article>
+        </section>
+        <section id="contato">
+            <article class="content">
+                <h2 class="main-title">Contato/Redes Sociais</h2>
+                <p>
+                    Abaixo seguem nossas redes sociais.
+                </p>
+
+            </article>
+        </section>
         <footer class="main-footer">
+            <h6 class="text-copy">Pata Amiga - Todos os direitos reservados &copy;<span class="year-copy"></span></h6>
+            <h6 class="text-copy">Desenvolvedor: Italo Russan - russan16@gmail.com</h6>
         </footer>
+        <script src="js/jquery-1.12.4.min.js"></script>
+        <script src="js/css3-animate-it.js"></script>
+        <script src="js/jquery.fancybox.js"></script>
+        <script src="js/scripts.js"></script>
     </body>
 </html>
