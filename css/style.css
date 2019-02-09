@@ -8,6 +8,7 @@ font-family: 'Montserrat', sans-serif;
     --caixa:#286CA2;
     --itau:#ff9641;
     --bbrasil:#F8D117;
+    --default:#ED1B24;
 }
 /*======================= HEADER =======================*/
 .main-header {
@@ -24,7 +25,7 @@ font-family: 'Montserrat', sans-serif;
 .wrap-menu {
     width: 100%;
     height: 60px;
-    background-color: #ED1B24;
+    background-color: var(--default);
     position: fixed;
     top: 0;
     left: 0;
@@ -72,8 +73,8 @@ font-family: 'Montserrat', sans-serif;
     position: absolute;
     left: -50px;
     top: 20px;
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     background-image: url('../imgs/logo-pata-amiga-mini.jpg');
     background-size: cover;
@@ -288,6 +289,34 @@ section:last-of-type {
     -ms-transform: scale(1.1);
     transform: scale(1.1);
 }
+.list-social {
+    list-style: none;
+    padding: 0
+}
+.list-social li {
+    display: inline-block;
+    margin: 10px 10px 0 10px;
+}
+.list-social li a {
+    color: #333;
+    font-size: 16px;
+    font-weight: 900;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row
+}
+.social-logo {
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 12px;
+    display: inline-block
+}
+.social-logo.instagram {background-image: url('../imgs/social/002-instagram.png')}
+.social-logo.facebook {background-image: url('../imgs/social/001-facebook.png')}
 /*======================= /CONTEUDO =======================*/
 /*======================= FOOTER =======================*/
 .main-footer {
